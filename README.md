@@ -2,7 +2,7 @@
 
 **——从线性代数开始的自学笔记**
 
-[下载完整 PDF（466 页，含目录页码）](https://github.com/KiriAky107/understanding-AI-and-Agents-in-depth/raw/refs/heads/main/深入理解AI和Agent：从线性代数开始的自学笔记.pdf)
+[在线阅读](https://kiriaky107.github.io/understanding-AI-and-Agents-in-depth/) · [下载完整 PDF（466 页，含目录页码）](https://github.com/KiriAky107/understanding-AI-and-Agents-in-depth/raw/refs/heads/main/深入理解AI和Agent：从线性代数开始的自学笔记.pdf)
 
 这是一套拒绝“黑盒调包”与“悬空背公式”的现代 AI 与智能体工程自学笔记。
 全书从最具体的资料检索与预测困难出发，先用向量、矩阵与微积分把数据表示、特征变换和误差反传一笔一划算清楚；随后沿着自回归语言模型（Transformer）、后训练对齐（SFT / DPO / PPO / LoRA / 量化）、视觉与语音多模态（ViT / CLIP / VLM / DDPM / CTC / RVC），一路推进到外挂知识库（RAG 混合检索与 LLM Wiki）、工具闭环、MCP 协议、多智能体独立窗口协作，最终落脚于跨越进程崩溃的 **Agent Runtime（SQLite 状态机、原子事务、Outbox 与租约防护令牌）** 与 **Agent Harness（上下文预算、安全沙箱、首次偏差追踪与常驻型 Super-agent）**，并在终章回到历史唯物主义视角审视技术与人类实践的关系。
@@ -45,6 +45,7 @@
 ├─ 分章/                     序言、第一至十一篇正文与后记 Markdown
 ├─ assets/                   当前正文引用的全部 SVG 矢量图与插图
 ├─ docs/练习题解.md          全书 83 道练习题解与运行索引
+├─ index.html / web/          GitHub Pages 阅读网站、主题检索与公式排版组件
 ├─ 现代AI示例/               全书唯一共用的 Python 实验工程目录
 │  ├─ modern_ai/             按职责拆分的算法、模型、协议、Runtime 与 Harness 源码模块
 │  ├─ data/                  内置自编学习笔记语料与实验数据（离线可用）

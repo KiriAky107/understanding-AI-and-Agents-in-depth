@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="深入理解AI和Agent：从线性代数开始的自学笔记。沿着手算、图解与 Python 实验，学习数学、神经网络、大模型与智能体工程。">
+  <meta name="theme-color" content="#f6f7f2">
+  <title>深入理解AI和Agent · 从线性代数开始的自学笔记</title>
+  <link rel="icon" href="web/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="web/style.css">
+  <script type="module" src="web/reader.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">跳到正文</a>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="深入理解AI和Agent 首页"><img src="web/icon.svg" width="32" height="32" alt=""><span>深入理解<span class="brand-accent"> AI / Agent</span></span></a>
+    <nav class="header-actions" aria-label="全站导航">
+      <button type="button" id="search-open" class="search-button"><span aria-hidden="true">⌕</span> 搜索全书 <kbd>Ctrl K</kbd></button>
+      <a class="pdf-link" href="深入理解AI和Agent：从线性代数开始的自学笔记.pdf" download>下载 PDF <span aria-hidden="true">↓</span></a>
+      <a class="repo-link" href="https://github.com/KiriAky107/understanding-AI-and-Agents-in-depth" target="_blank" rel="noopener">GitHub ↗</a>
+    </nav>
+  </header>
+  <div id="app"><main id="main" class="loading" aria-live="polite">正在载入阅读目录…</main></div>
+  <noscript><div class="noscript">在线阅读需要启用 JavaScript。也可以<a href="深入理解AI和Agent：从线性代数开始的自学笔记.pdf">下载完整 PDF</a>，或在 <a href="https://github.com/KiriAky107/understanding-AI-and-Agents-in-depth/tree/main/分章">GitHub 阅读分章</a>。</div></noscript>
+  <footer class="site-footer"><span>© KiriAky107 · 从手算到实践</span><span>正文与原创插图 CC BY-NC-SA 4.0 · 代码 MIT · <a href="https://github.com/KiriAky107/understanding-AI-and-Agents-in-depth/blob/main/LICENSE">许可与素材署名</a></span></footer>
+  <dialog id="search-dialog" aria-labelledby="search-title">
+    <form method="dialog" class="dialog-top"><h2 id="search-title">搜索全书</h2><button class="close-button" aria-label="关闭搜索">×</button></form>
+    <label class="search-label" for="search-input">输入概念、公式符号或题号</label>
+    <input id="search-input" type="search" placeholder="试试：矩阵、KV Cache、RT-07" autocomplete="off">
+    <p id="search-status" class="muted" role="status">搜索包含正文与练习题解。</p>
+    <div id="search-results"></div>
+  </dialog>
+  <dialog id="image-dialog" aria-label="配图大图"><form method="dialog"><button class="close-button" aria-label="关闭大图">关闭 ×</button></form><img id="image-large" alt=""><p id="image-caption"></p></dialog>
+</body>
+</html>

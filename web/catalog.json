@@ -1,0 +1,141 @@
+{
+  "title": "深入理解AI和Agent",
+  "subtitle": "从线性代数开始的自学笔记",
+  "tags": [
+    "线性代数",
+    "机器学习",
+    "LLM",
+    "RAG",
+    "Agent",
+    "MCP",
+    "自学笔记"
+  ],
+  "chapters": [
+    {
+      "id": "00",
+      "label": "序",
+      "title": "序言与学习路线",
+      "shortTitle": "序言与学习路线",
+      "description": "系统四层分工、十篇掌握基线、三条阅读路线与三遍阅读法",
+      "file": "分章/00-序言与学习路线.md",
+      "group": "阅读指南"
+    },
+    {
+      "id": "01",
+      "label": "01",
+      "title": "一、数据表示与数学基础",
+      "shortTitle": "数据表示与数学基础",
+      "description": "向量内积与余弦、矩阵几何变换、行列式、正交投影、PCA/SVD 与交叉熵",
+      "file": "分章/01-数据表示与数学基础.md",
+      "group": "数学基础"
+    },
+    {
+      "id": "02",
+      "label": "02",
+      "title": "二、从预测到机器学习",
+      "shortTitle": "从预测到机器学习",
+      "description": "线性/逻辑回归梯度下降、正则化与反求约束、数据泄漏防范与混淆矩阵",
+      "file": "分章/02-从预测到机器学习.md",
+      "group": "机器学习"
+    },
+    {
+      "id": "03",
+      "label": "03",
+      "title": "三、神经网络、深度学习与上下文表示",
+      "shortTitle": "神经网络、深度学习与上下文表示",
+      "description": "多层折线与计算图反传、CNN 局部卷积、RNN/LSTM 时间展开与 Attention 寻址",
+      "file": "分章/03-神经网络深度学习与上下文表示.md",
+      "group": "神经网络"
+    },
+    {
+      "id": "04",
+      "label": "04",
+      "title": "四、大语言模型的架构、训练与生成",
+      "shortTitle": "大语言模型的架构、训练与生成",
+      "description": "UTF-8/BPE 分词、多头注意力三路反传、RoPE、因果掩码、Pre-LN 块与 KV Cache",
+      "file": "分章/04-大语言模型的架构训练与生成.md",
+      "group": "大语言模型"
+    },
+    {
+      "id": "05",
+      "label": "05",
+      "title": "五、后训练、微调与部署",
+      "shortTitle": "后训练、微调与部署",
+      "description": "SFT 掩码与提示梯度、DPO 偏好与 KL 推导、PPO 双向截断、CoT 与口癖、LoRA 与量化",
+      "file": "分章/05-后训练微调与部署.md",
+      "group": "后训练与部署"
+    },
+    {
+      "id": "06",
+      "label": "06",
+      "title": "六、视觉、语音与多模态",
+      "shortTitle": "视觉、语音与多模态",
+      "description": "ViT 切块重排、CLIP 对比与归一化导数、VLM 拼接、检测分割、DDPM 扩散、STFT、CTC 与 RVC",
+      "file": "分章/06-视觉语音与多模态.md",
+      "group": "多模态"
+    },
+    {
+      "id": "07",
+      "label": "07",
+      "title": "七、从模型调用、RAG 检索到工具闭环",
+      "shortTitle": "从模型调用、RAG 检索到工具闭环",
+      "description": "HTTP 边界、deepcopy 快照、前置过滤、BM25/RRF 混合检索、LLM Wiki、十道校验与 Agent 循环",
+      "file": "分章/07-模型调用RAG与工具闭环.md",
+      "group": "检索与工具"
+    },
+    {
+      "id": "08",
+      "label": "08",
+      "title": "八、协议、扩展、框架与多智能体",
+      "shortTitle": "协议、扩展、框架与多智能体",
+      "description": "MCP stdio 握手与错误分层、Skill 三级按需加载与 Plugin、三角色多智能体账单、LangChain/LangGraph 映射",
+      "file": "分章/08-协议扩展框架与多智能体.md",
+      "group": "协议与协作"
+    },
+    {
+      "id": "09",
+      "label": "09",
+      "title": "九、Agent Runtime：状态、事务与恢复",
+      "shortTitle": "Agent Runtime：状态、事务与恢复",
+      "description": "四类身份与七张表、FSM 与乐观锁、四表原子事务、Outbox 去重、租约与防护令牌、LangGraph 检查点与重入",
+      "file": "分章/09-AgentRuntime状态与恢复.md",
+      "group": "Runtime"
+    },
+    {
+      "id": "10",
+      "label": "10",
+      "title": "十、Agent Harness：上下文、边界与长程任务",
+      "shortTitle": "Agent Harness：上下文、边界与长程任务",
+      "description": "192 字节预算账单、长期记忆四记录、尝试与业务分离、路径/进程沙箱、gate 确认绑定、追踪、评测与 Super-agent",
+      "file": "分章/10-AgentHarness上下文与长程任务.md",
+      "group": "Harness"
+    },
+    {
+      "id": "11",
+      "label": "11",
+      "title": "十一、技术回顾与自主意识生成的哲学思考",
+      "shortTitle": "技术回顾与自主意识生成的哲学思考",
+      "description": "第一人称幻觉、逻辑与思维倒置批判、自主需要、对象化实践与中文房间、死劳动价值转移与真实之爱",
+      "file": "分章/11-技术回顾与主观意识的思考.md",
+      "group": "哲学思考"
+    },
+    {
+      "id": "12",
+      "label": "后记",
+      "title": "后记",
+      "shortTitle": "后记",
+      "description": "全书十一个台阶回顾、进阶阅读方向与致谢",
+      "file": "分章/12-后记.md",
+      "group": "参考与后记"
+    },
+    {
+      "id": "solutions",
+      "label": "题解",
+      "title": "练习题解与运行索引",
+      "shortTitle": "练习题解与运行索引",
+      "description": "83 道题解，按稳定题号查找手算结果、程序入口与核验要求",
+      "file": "docs/练习题解.md",
+      "group": "配套练习"
+    }
+  ]
+}
