@@ -109,6 +109,33 @@ async function typeset(article) {
   await window.MathJax.typesetPromise([article]);
 }
 
+async function highlightCode(root) {
+  const blocks = [...root.querySelectorAll('pre')];
+  if (!blocks.length) return;
+  const {highlighter} = await import('./vendor/shiki.js');
+  const shiki = await highlighter();
+  for (const original of blocks) {
+    const code = original.querySelector('code');
+    const text = code?.textContent || '';
+    const requested = /(?:^|\s)language-(\S+)/.exec(code?.className || '')?.[1] || 'text';
+    const language = shiki.getLoadedLanguages().includes(requested) ? requested : 'text';
+    const template = document.createElement('template');
+    template.innerHTML = shiki.codeToHtml(text, {lang: language, themes: {light: 'github-light', dark: 'github-dark'}});
+    const pre = template.content.firstElementChild;
+    // 只改着色，不改变代码字符；复制始终使用原稿的完整文本。
+    if (pre.querySelector('code').textContent !== text) throw Error('代码高亮改变了文本');
+    pre.dataset.language = language;
+    const label = document.createElement('span'); label.className = 'code-language'; label.textContent = requested.toUpperCase(); label.setAttribute('aria-hidden', 'true');
+    const copy = document.createElement('button'); copy.type = 'button'; copy.className = 'copy-code'; copy.textContent = '复制代码';
+    copy.addEventListener('click', async () => {
+      try {await navigator.clipboard.writeText(text); copy.textContent = '已复制';}
+      catch {copy.textContent = '请选中代码复制';}
+      setTimeout(() => copy.textContent = '复制代码', 1800);
+    });
+    pre.append(label, copy); original.replaceWith(pre);
+  }
+}
+
 function scrollToHash() {
   if (!location.hash) return;
   try {document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView();} catch { /* 保留正文阅读，不因无效 URL 中断。 */ }
@@ -146,14 +173,7 @@ async function reader(chapter) {
     wrapper.tabIndex = 0; wrapper.setAttribute('role', 'region'); wrapper.setAttribute('aria-label', '可横向滚动的表格');
     table.replaceWith(wrapper); wrapper.append(table);
   }
-  for (const pre of parsed.root.querySelectorAll('pre')) {
-    const copy = document.createElement('button'); copy.type = 'button'; copy.className = 'copy-code'; copy.textContent = '复制代码';
-    copy.addEventListener('click', async () => {
-      try {await navigator.clipboard.writeText(pre.querySelector('code')?.textContent || ''); copy.textContent = '已复制';}
-      catch {copy.textContent = '请选中代码复制';}
-      setTimeout(() => copy.textContent = '复制代码', 1800);
-    }); pre.append(copy);
-  }
+  await highlightCode(parsed.root);
   article.append(parsed.root);
   app.querySelector('.back-top').addEventListener('click', () => scrollTo({top: 0, behavior: 'instant'}));
   for (const a of app.querySelectorAll('.mobile-toc a')) a.addEventListener('click', () => app.querySelector('.mobile-toc').open = false);

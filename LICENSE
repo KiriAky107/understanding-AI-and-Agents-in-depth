@@ -36,4 +36,6 @@ Copyright (c) 2026 KiriAky107
 
 `web/vendor/marked.esm.js` 来自 Marked 17.0.5，采用 MIT 许可，完整声明见 `LICENSES/Marked-MIT.txt`。`web/vendor/mathjax.js` 来自 MathJax 3.2.2，采用 Apache-2.0 许可，完整声明见 `LICENSES/MathJax-Apache-2.0.txt`。两者仅用于网页正文与公式排版，保留各自原始许可。
 
-原创网页程序 `web/reader.js`、`web/math.js`、`web/style.css` 与 `index.html` 采用 `LICENSES/MIT.txt` 中的 MIT 许可；正文、原创插图及第三方素材仍按上述分项许可执行。
+`web/vendor/shiki.js` 使用 Shiki 4.6.0 为代码提供浅色与深色语法高亮，仅包含正文使用的语法；各打包组件的作者声明和 MIT 许可见 `LICENSES/Shiki-components.txt`。
+
+原创网页程序 `web/reader.js`、`web/math.js`、`web/theme.js`、`web/style.css` 与 `index.html` 采用 `LICENSES/MIT.txt` 中的 MIT 许可；正文、原创插图及第三方素材仍按上述分项许可执行。

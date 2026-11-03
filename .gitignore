@@ -23,6 +23,7 @@
 !/LICENSES/MIT.txt
 !/LICENSES/Marked-MIT.txt
 !/LICENSES/MathJax-Apache-2.0.txt
+!/LICENSES/Shiki-components.txt
 !/README.md
 !/assets/00-学习路线.svg
 !/assets/01-PCA投影与重建计算.svg
@@ -206,8 +207,10 @@
 !/web/math.js
 !/web/reader.js
 !/web/style.css
+!/web/theme.js
 !/web/vendor/marked.esm.js
 !/web/vendor/mathjax.js
+!/web/vendor/shiki.js
 !/分章/00-序言与学习路线.md
 !/分章/01-数据表示与数学基础.md
 !/分章/02-从预测到机器学习.md
