@@ -2,6 +2,8 @@
 
 **——从线性代数开始的自学笔记**
 
+[下载完整 PDF（466 页，含目录页码）](https://github.com/KiriAky107/understanding-AI-and-Agents-in-depth/raw/refs/heads/main/深入理解AI和Agent：从线性代数开始的自学笔记.pdf)
+
 这是一套拒绝“黑盒调包”与“悬空背公式”的现代 AI 与智能体工程自学笔记。
 全书从最具体的资料检索与预测困难出发，先用向量、矩阵与微积分把数据表示、特征变换和误差反传一笔一划算清楚；随后沿着自回归语言模型（Transformer）、后训练对齐（SFT / DPO / PPO / LoRA / 量化）、视觉与语音多模态（ViT / CLIP / VLM / DDPM / CTC / RVC），一路推进到外挂知识库（RAG 混合检索与 LLM Wiki）、工具闭环、MCP 协议、多智能体独立窗口协作，最终落脚于跨越进程崩溃的 **Agent Runtime（SQLite 状态机、原子事务、Outbox 与租约防护令牌）** 与 **Agent Harness（上下文预算、安全沙箱、首次偏差追踪与常驻型 Super-agent）**，并在终章回到历史唯物主义视角审视技术与人类实践的关系。
 
@@ -56,7 +58,7 @@
 **关于正文中“代码包内”路径的查找约定**：
 正文中所有标注为 `代码包内：...` 的相对路径，一律以克隆或解压后包含上述文件夹的**项目根目录**为起点计算，与读者将导出的 PDF 存放在哪个目录下无关。例如，`代码包内：现代AI示例/modern_ai/agent.py` 即指代根目录下的 `现代AI示例/modern_ai/agent.py`。
 
-点击 GitHub 页面右上角的 **Code → Download ZIP** 即可获取全部公开文件，包括全书 83 道[练习题解](https://github.com/KiriAky107/understanding-AI-and-Agents-in-depth/blob/main/docs/%E7%BB%83%E4%B9%A0%E9%A2%98%E8%A7%A3.md)（代码包内：`docs/练习题解.md`）。`docs/` 下仅公开这一份题解；其余记录及 `tools/` 中的本地构建检查脚本仅保存在作者另行提供的离线代码包或本地工作目录中。合篇排印稿、PDF、旧版归档与本地构建工具不纳入公开仓库。
+点击 GitHub 页面右上角的 **Code → Download ZIP** 即可获取全部公开文件，包括全书 83 道[练习题解](https://github.com/KiriAky107/understanding-AI-and-Agents-in-depth/blob/main/docs/%E7%BB%83%E4%B9%A0%E9%A2%98%E8%A7%A3.md)（代码包内：`docs/练习题解.md`）。`docs/` 下仅公开这一份题解；其余记录及 `tools/` 中的本地构建检查脚本仅保存在作者另行提供的离线代码包或本地工作目录中。本书带页码 PDF 已在根目录提供；合篇 Markdown、教材 PDF、旧版归档与本地构建检查工具不纳入公开仓库。
 
 ## 快速运行指南
 
