@@ -1,0 +1,6 @@
+{
+  "name": "reading-notes",
+  "version": "1.0.0",
+  "description": "学习资料整理示例",
+  "skills": "./skills"
+}

@@ -1,0 +1,8 @@
+[
+  {"id":"numpy","source":"numpy-notes","owner":"public","revision":"2026-10-31","text":"切片介绍：切片共享数据。\n\n修改视图会影响原数组；复制后再改，原数组保持不变。"},
+  {"id":"copy","source":"copy-notes","owner":"public","revision":"2026-10-31","text":"共享数据；复制后得到复制品。"},
+  {"id":"slice","source":"slice-index","owner":"public","revision":"2026-10-31","text":"切片。"},
+  {"id":"runtime","source":"runtime-notes","owner":"public","revision":"2026-10-31","text":"检查点保存任务状态与下一步。恢复先读取已保存状态。\n\n事务把计划写入、任务完成与事件一起提交；幂等键阻止同一任务重复创建计划。"},
+  {"id":"old","source":"runtime-notes","owner":"public","revision":"2025-01-01","text":"旧版计划保存在进程内存，停止后不能恢复。"},
+  {"id":"private","source":"bob-notes","owner":"bob","revision":"2026-10-31","text":"切片共享复制检查点事务幂等恢复计划。Bob 私人记录。"}
+]

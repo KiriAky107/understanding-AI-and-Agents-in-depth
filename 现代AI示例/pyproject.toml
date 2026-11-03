@@ -1,0 +1,26 @@
+[project]
+name = "modern-ai-notes-examples"
+version = "1.0.0"
+requires-python = ">=3.12,<3.13"
+dependencies = ["numpy==1.26.4", "torch==2.6.0", "scikit-learn==1.6.1", "matplotlib==3.10.3", "pyyaml==6.0.3"]
+
+[project.optional-dependencies]
+frameworks = ["langchain==1.4.7", "langgraph==1.2.18", "langgraph-checkpoint-sqlite==3.1.2", "pydantic==2.14.2"]
+
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["modern_ai*"]
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+
+[tool.uv]
+package = false
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true

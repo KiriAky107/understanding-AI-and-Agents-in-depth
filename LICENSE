@@ -1,0 +1,33 @@
+# 许可说明
+
+Copyright (c) 2026 KiriAky107
+
+本项目按内容类型分别授权，不使用一份许可覆盖全部素材。
+
+## 程序代码：MIT
+
+`现代AI示例/` 中由本项目编写的程序代码、配置及教学插件示例，完整离线包中本项目编写的绘图与核验脚本，以及正文中的原创代码片段，采用 MIT License。完整许可见 [LICENSES/MIT.txt](LICENSES/MIT.txt)；示例代码目录内同时保留一份 MIT 许可。
+
+## 原创正文与插图：CC BY-NC-SA 4.0
+
+由本项目作者享有相应权利的原创正文、原创 SVG 图解与原创情境插图，采用 Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International（署名—非商业性使用—相同方式共享 4.0 国际）。
+
+使用时应署名 **KiriAky107**，保留作品名称与来源，提供许可链接，注明所作修改；非商业性分享和改编按该许可执行，改编作品采用相同许可。完整条款以 [LICENSES/CC-BY-NC-SA-4.0.txt](LICENSES/CC-BY-NC-SA-4.0.txt) 和[官方法律文本](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode)为准。
+
+建议署名：“KiriAky107，《深入理解AI和Agent：从线性代数开始的自学笔记》，CC BY-NC-SA 4.0”，并附[项目链接](https://github.com/KiriAky107/understanding-AI-and-Agents-in-depth)。
+
+## 第三方内容
+
+第三方作品、引文、漫画、角色设定、商标及依赖库保留原权利人的权利和许可，不属于以上原创内容授权。XKCD #327 保持 CC BY-NC 2.5；ATRI 与社区角色同人插图中的上游角色权利不由本项目授权。具体素材的来源与署名如下。
+
+
+| 素材文件名 | 来源、创作者与许可类型 |
+| :--- | :--- |
+| `10-xkcd-327-exploits-of-a-mom.png` | Randall Munroe，[XKCD #327《Exploits of a Mom》](https://xkcd.com/327/)。保留原始像素与英文台词，未作任何修改；按作者官方[转载说明](https://xkcd.com/license.html)及 [CC BY-NC 2.5](https://creativecommons.org/licenses/by-nc/2.5/) 署名转载。 |
+| `09-亚托莉与日记本.png` | 人工智能生成的角色同人情境插图。角色形象出自视觉小说[《ATRI -My Dear Moments-》](https://atri-mdm.com/character/?chara=atri)，角色版权及原作品权利归属于原权利人；此图并非官方立绘或游戏截图， |
+| `10-蓝色大肥鱼与Watchdog.png` | 人工智能生成的社区角色同人情境插图。梗资料参考[梗鲸的来历介绍](https://aigengtu.com/zh/whale-chan)（注：该页面为第三方二手整理）；角色构思参考 YunYueSama 的[社区角色说明](https://github.com/YunYueSama/codex-deepseek-pet/blob/main/docs/角色设定.md)。本仓库不作为该网络梗的发源地，亦不以本项目许可授予上游角色相关商业权利。 |
+| 其余 9 张 PNG 位图 | 用于辅助学习场景、协作劳动、中文房间与书信等叙述的 AI 生成原创情境插图 |
+
+本项目只授予作者有权授予的权利；AI 生成素材的生成方式不改变第三方角色、商标或原作品的权利归属。
+
+转载或二次分发时，请保留作品旁的署名、原始来源和许可说明。
