@@ -76,18 +76,18 @@ function home() {
       <p class="hero-note">在线阅读全文 · 配套代码与练习题解 · 可下载 PDF</p>
     </div><div class="cover-figure" aria-label="由向量变换走向神经网络与智能体的示意">
       <svg viewBox="0 0 360 245" role="img" aria-label="方格中的两条基向量经过矩阵变换，进入网络与反馈循环">
-        <defs><pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#ced8c9" stroke-width=".7"/></pattern><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#225e53"/></marker></defs>
+        <defs><pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#d5dce3" stroke-width=".7"/></pattern><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2563a5"/></marker></defs>
         <rect x="0" y="0" width="360" height="245" fill="url(#grid)"/>
-        <path d="M24 137H169M58 168V30" stroke="#9bab94" stroke-width="1"/>
-        <path d="M58 137L130 137L154 65L82 65Z" fill="#bacd9a" fill-opacity=".35" stroke="#718d65" stroke-width="1.3"/>
-        <path d="M58 137H130M58 137L82 65" stroke="#225e53" stroke-width="2.3" marker-end="url(#arrow)"/>
-        <circle cx="58" cy="137" r="3" fill="#225e53"/>
-        <text x="133" y="154" fill="#48634b" font-family="Georgia,serif" font-size="15">e₁</text><text x="65" y="58" fill="#48634b" font-family="Georgia,serif" font-size="15">e₂</text>
-        <path d="M176 96H210" stroke="#225e53" marker-end="url(#arrow)"/>
-        <g stroke="#91a585" stroke-width="1.1"><path d="M232 59L282 83L232 114L282 143L232 166M232 59L282 143M232 166L282 83M282 83L329 113L282 143" fill="none"/></g>
-        <g fill="#f6f7f2" stroke="#225e53" stroke-width="1.6"><circle cx="232" cy="59" r="6"/><circle cx="232" cy="114" r="6"/><circle cx="232" cy="166" r="6"/><circle cx="282" cy="83" r="6"/><circle cx="282" cy="143" r="6"/><circle cx="329" cy="113" r="6"/></g>
-        <path d="M329 134V207H232V183" stroke="#225e53" stroke-width="1.2" fill="none" stroke-dasharray="3 4" marker-end="url(#arrow)"/>
-        <text x="30" y="216" fill="#48634b" font-family="ui-monospace,monospace" font-size="13">y = Wx</text><text x="254" y="229" fill="#48634b" font-family="ui-monospace,monospace" font-size="10">act · observe</text>
+        <path d="M24 137H169M58 168V30" stroke="#a7b6c7" stroke-width="1"/>
+        <path d="M58 137L130 137L154 65L82 65Z" fill="#aad2f5" fill-opacity=".35" stroke="#7a9cbe" stroke-width="1.3"/>
+        <path d="M58 137H130M58 137L82 65" stroke="#2563a5" stroke-width="2.3" marker-end="url(#arrow)"/>
+        <circle cx="58" cy="137" r="3" fill="#2563a5"/>
+        <text x="133" y="154" fill="#536c87" font-family="Georgia,serif" font-size="15">e₁</text><text x="65" y="58" fill="#536c87" font-family="Georgia,serif" font-size="15">e₂</text>
+        <path d="M176 96H210" stroke="#2563a5" marker-end="url(#arrow)"/>
+        <g stroke="#8ba6c4" stroke-width="1.1"><path d="M232 59L282 83L232 114L282 143L232 166M232 59L282 143M232 166L282 83M282 83L329 113L282 143" fill="none"/></g>
+        <g fill="#fbfcfe" stroke="#2563a5" stroke-width="1.6"><circle cx="232" cy="59" r="6"/><circle cx="232" cy="114" r="6"/><circle cx="232" cy="166" r="6"/><circle cx="282" cy="83" r="6"/><circle cx="282" cy="143" r="6"/><circle cx="329" cy="113" r="6"/></g>
+        <path d="M329 134V207H232V183" stroke="#2563a5" stroke-width="1.2" fill="none" stroke-dasharray="3 4" marker-end="url(#arrow)"/>
+        <text x="30" y="216" fill="#536c87" font-family="ui-monospace,monospace" font-size="13">y = Wx</text><text x="254" y="229" fill="#536c87" font-family="ui-monospace,monospace" font-size="10">act · observe</text>
       </svg><div class="cover-caption"><span>01 → 11</span><strong>表示 / 学习 / 生成 / 行动</strong></div>
     </div></section>
     <div class="book-meta"><span><strong>11</strong> 篇正文</span><span><strong>175</strong> 幅配图</span><span><strong>83</strong> 道练习题解</span><span><strong>466</strong> 页 PDF</span></div>
