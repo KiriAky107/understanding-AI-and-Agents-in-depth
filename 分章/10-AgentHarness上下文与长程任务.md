@@ -836,11 +836,11 @@ $env:OMP_NUM_THREADS = "1"
 
 | 题号 | 要求 | 操作与推演 | 题解 |
 | --- | --- | --- | --- |
-| HA-01 | **必做** | 手算97→153→188，解释长材料跳过后为何还能加入短材料；显式加来源后重算 | 预算账单（代码包内：`docs/练习题解.md`；定位：`HA-01`） |
-| HA-02 | **必做** | 对比滑窗、摘要与两版原文，说明摘要值变化能证明什么；重新打开数据库召回 | 外部记忆（代码包内：`docs/练习题解.md`；定位：`HA-02`） |
-| HA-03 | **必做** | 推出两轮后的消息数，重写同编号现场，再用新编号记录；检查业务状态 | 尝试与阶段（代码包内：`docs/练习题解.md`；定位：`HA-03`） |
-| HA-04 | **必做** | 比较父目录、绝对路径、边界文件及含分号文件名；说明每道检查的对象 | 执行边界（代码包内：`docs/练习题解.md`；定位：`HA-04`） |
-| HA-05 | **必做** | 分别修改身份、版本和分钟数，说明原确认何时失效；检查额外owner字段 | 动作确认（代码包内：`docs/练习题解.md`；定位：`HA-05`） |
-| HA-06 | **必做** | 从64分钟回查输入与提案，定位首次偏差；说明为何不能责怪计算工具 | 追踪定位（代码包内：`docs/练习题解.md`；定位：`HA-06`） |
-| HA-07 | **必做** | 比较基线与变异版本，找到退步样本；解释为什么合法操作也必须入测试集 | 回归评测（代码包内：`docs/练习题解.md`；定位：`HA-07`） |
-| HA-08 | **拓展选做** | 画出100—134的领取时间线，区分jobs.done与runs.waiting，解释为何计划数仍为0 | 常驻接力（代码包内：`docs/练习题解.md`；定位：`HA-08`） |
+| HA-01 | **必做** | 手算97→153→188，解释长材料跳过后为何还能加入短材料；显式加来源后重算 | [预算账单](https://github.com/KiriAky107/understanding-AI-and-Agents-in-depth/blob/main/docs/%E7%BB%83%E4%B9%A0%E9%A2%98%E8%A7%A3.md#HA-01)（代码包内：`docs/练习题解.md`；定位：`HA-01`） |
+| HA-02 | **必做** | 对比滑窗、摘要与两版原文，说明摘要值变化能证明什么；重新打开数据库召回 | [外部记忆](https://github.com/KiriAky107/understanding-AI-and-Agents-in-depth/blob/main/docs/%E7%BB%83%E4%B9%A0%E9%A2%98%E8%A7%A3.md#HA-02)（代码包内：`docs/练习题解.md`；定位：`HA-02`） |
+| HA-03 | **必做** | 推出两轮后的消息数，重写同编号现场，再用新编号记录；检查业务状态 | [尝试与阶段](https://github.com/KiriAky107/understanding-AI-and-Agents-in-depth/blob/main/docs/%E7%BB%83%E4%B9%A0%E9%A2%98%E8%A7%A3.md#HA-03)（代码包内：`docs/练习题解.md`；定位：`HA-03`） |
+| HA-04 | **必做** | 比较父目录、绝对路径、边界文件及含分号文件名；说明每道检查的对象 | [执行边界](https://github.com/KiriAky107/understanding-AI-and-Agents-in-depth/blob/main/docs/%E7%BB%83%E4%B9%A0%E9%A2%98%E8%A7%A3.md#HA-04)（代码包内：`docs/练习题解.md`；定位：`HA-04`） |
+| HA-05 | **必做** | 分别修改身份、版本和分钟数，说明原确认何时失效；检查额外owner字段 | [动作确认](https://github.com/KiriAky107/understanding-AI-and-Agents-in-depth/blob/main/docs/%E7%BB%83%E4%B9%A0%E9%A2%98%E8%A7%A3.md#HA-05)（代码包内：`docs/练习题解.md`；定位：`HA-05`） |
+| HA-06 | **必做** | 从64分钟回查输入与提案，定位首次偏差；说明为何不能责怪计算工具 | [追踪定位](https://github.com/KiriAky107/understanding-AI-and-Agents-in-depth/blob/main/docs/%E7%BB%83%E4%B9%A0%E9%A2%98%E8%A7%A3.md#HA-06)（代码包内：`docs/练习题解.md`；定位：`HA-06`） |
+| HA-07 | **必做** | 比较基线与变异版本，找到退步样本；解释为什么合法操作也必须入测试集 | [回归评测](https://github.com/KiriAky107/understanding-AI-and-Agents-in-depth/blob/main/docs/%E7%BB%83%E4%B9%A0%E9%A2%98%E8%A7%A3.md#HA-07)（代码包内：`docs/练习题解.md`；定位：`HA-07`） |
+| HA-08 | **拓展选做** | 画出100—134的领取时间线，区分jobs.done与runs.waiting，解释为何计划数仍为0 | [常驻接力](https://github.com/KiriAky107/understanding-AI-and-Agents-in-depth/blob/main/docs/%E7%BB%83%E4%B9%A0%E9%A2%98%E8%A7%A3.md#HA-08)（代码包内：`docs/练习题解.md`；定位：`HA-08`） |

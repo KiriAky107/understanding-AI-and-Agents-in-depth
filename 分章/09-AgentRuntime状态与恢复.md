@@ -735,14 +735,14 @@ LangGraph 图检查点的 next 待办节点： ["commit"]（图以为 commit 还
 
 | 题号 | 要求 | 动手任务 | 对应题解 |
 | --- | --- | --- | --- |
-| RT-01 | **必做** | 创建 A、B 两项任务并交错推进，解释 A 的事件序号为何是 1、3；比较 Store 与 Queue 初始化后的表数量 | 表与事件（代码包内：`docs/练习题解.md`；定位：`RT-01`） |
-| RT-02 | **必做** | 让四个独立进程接力推进一项任务；重复确认、取消终态、无来源准备分别会怎样 | 状态接力（代码包内：`docs/练习题解.md`；定位：`RT-02`） |
-| RT-03 | **必做** | 两位编辑都持有版本 2，同时修订等待中的提案；核对成功次数、旧确认拒绝与最终版本 | 版本竞争（代码包内：`docs/练习题解.md`；定位：`RT-03`） |
-| RT-04 | **必做** | 注入四种提交故障，由新进程查询四张表，再重试；解释退出码和业务是否完成为何不能直接画等号 | 故障窗口（代码包内：`docs/练习题解.md`；定位：`RT-04`） |
-| RT-05 | **必做** | 在接收方接受后、发送方登记回执前中断；重投后核对两端，并试一次同键异内容 | 投递去重（代码包内：`docs/练习题解.md`；定位：`RT-05`） |
-| RT-06 | **必做** | 手算 130 秒到期与 133 秒旧令牌两种拒绝；实际比较有无写入保护，并核对续租到 250 秒 | 租约与写入（代码包内：`docs/练习题解.md`；定位：`RT-06`） |
-| RT-07 | **拓展选做** | 统计 interrupt 前后的节点访问；注入业务已提交而图未前进的故障，再恢复并检查计划数 | 图恢复（代码包内：`docs/练习题解.md`；定位：`RT-07`） |
-| RT-08 | **拓展选做** | 串起入队、进程恢复、旧 Worker 拒绝、重复确认和投递重试，指出每项完成事实属于哪张表 | 完整接力（代码包内：`docs/练习题解.md`；定位：`RT-08`） |
+| RT-01 | **必做** | 创建 A、B 两项任务并交错推进，解释 A 的事件序号为何是 1、3；比较 Store 与 Queue 初始化后的表数量 | [表与事件](https://github.com/KiriAky107/understanding-AI-and-Agents-in-depth/blob/main/docs/%E7%BB%83%E4%B9%A0%E9%A2%98%E8%A7%A3.md#RT-01)（代码包内：`docs/练习题解.md`；定位：`RT-01`） |
+| RT-02 | **必做** | 让四个独立进程接力推进一项任务；重复确认、取消终态、无来源准备分别会怎样 | [状态接力](https://github.com/KiriAky107/understanding-AI-and-Agents-in-depth/blob/main/docs/%E7%BB%83%E4%B9%A0%E9%A2%98%E8%A7%A3.md#RT-02)（代码包内：`docs/练习题解.md`；定位：`RT-02`） |
+| RT-03 | **必做** | 两位编辑都持有版本 2，同时修订等待中的提案；核对成功次数、旧确认拒绝与最终版本 | [版本竞争](https://github.com/KiriAky107/understanding-AI-and-Agents-in-depth/blob/main/docs/%E7%BB%83%E4%B9%A0%E9%A2%98%E8%A7%A3.md#RT-03)（代码包内：`docs/练习题解.md`；定位：`RT-03`） |
+| RT-04 | **必做** | 注入四种提交故障，由新进程查询四张表，再重试；解释退出码和业务是否完成为何不能直接画等号 | [故障窗口](https://github.com/KiriAky107/understanding-AI-and-Agents-in-depth/blob/main/docs/%E7%BB%83%E4%B9%A0%E9%A2%98%E8%A7%A3.md#RT-04)（代码包内：`docs/练习题解.md`；定位：`RT-04`） |
+| RT-05 | **必做** | 在接收方接受后、发送方登记回执前中断；重投后核对两端，并试一次同键异内容 | [投递去重](https://github.com/KiriAky107/understanding-AI-and-Agents-in-depth/blob/main/docs/%E7%BB%83%E4%B9%A0%E9%A2%98%E8%A7%A3.md#RT-05)（代码包内：`docs/练习题解.md`；定位：`RT-05`） |
+| RT-06 | **必做** | 手算 130 秒到期与 133 秒旧令牌两种拒绝；实际比较有无写入保护，并核对续租到 250 秒 | [租约与写入](https://github.com/KiriAky107/understanding-AI-and-Agents-in-depth/blob/main/docs/%E7%BB%83%E4%B9%A0%E9%A2%98%E8%A7%A3.md#RT-06)（代码包内：`docs/练习题解.md`；定位：`RT-06`） |
+| RT-07 | **拓展选做** | 统计 interrupt 前后的节点访问；注入业务已提交而图未前进的故障，再恢复并检查计划数 | [图恢复](https://github.com/KiriAky107/understanding-AI-and-Agents-in-depth/blob/main/docs/%E7%BB%83%E4%B9%A0%E9%A2%98%E8%A7%A3.md#RT-07)（代码包内：`docs/练习题解.md`；定位：`RT-07`） |
+| RT-08 | **拓展选做** | 串起入队、进程恢复、旧 Worker 拒绝、重复确认和投递重试，指出每项完成事实属于哪张表 | [完整接力](https://github.com/KiriAky107/understanding-AI-and-Agents-in-depth/blob/main/docs/%E7%BB%83%E4%B9%A0%E9%A2%98%E8%A7%A3.md#RT-08)（代码包内：`docs/练习题解.md`；定位：`RT-08`） |
 
 ~~~powershell
 # 按题号单独运行并查看中间核验状态（RT-01 至 RT-08）。
