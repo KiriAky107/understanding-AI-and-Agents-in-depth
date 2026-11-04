@@ -1,5 +1,5 @@
 import {marked} from './vendor/marked.esm.js';
-import {protectMath, escapeHTML as esc} from './math.js';
+import {protectMath, escapeHTML as esc} from './math.js?v=20261104.4';
 
 const base = new URL('./', location.href);
 const repo = 'https://github.com/KiriAky107/understanding-AI-and-Agents-in-depth';
@@ -99,32 +99,27 @@ function home() {
   document.documentElement.dataset.ready = 'home';
 }
 
+let mathReady;
 async function typeset(article) {
-  window.MathJax = {tex: {inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']]}, startup: {typeset: false}, options: {enableMenu: false}, svg: {fontCache: 'global'}};
-  await new Promise((resolve, reject) => {
-    const script = document.createElement('script'); script.src = new URL('web/vendor/mathjax.js', base).href;
-    script.onload = resolve; script.onerror = () => reject(Error('公式组件加载失败')); document.head.append(script);
-  });
-  await window.MathJax.startup.promise;
+  if (!mathReady) {
+    window.MathJax = {tex: {inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']]}, startup: {typeset: false}, options: {enableMenu: false}, svg: {fontCache: 'global'}};
+    mathReady = new Promise((resolve, reject) => {
+      const script = document.createElement('script'); script.src = new URL('web/vendor/mathjax.js', base).href;
+      script.onload = resolve;
+      script.onerror = () => {script.remove(); reject(Error('公式组件加载失败'));};
+      document.head.append(script);
+    }).then(() => window.MathJax.startup.promise).catch(error => {mathReady = null; throw error;});
+  }
+  await mathReady;
   await window.MathJax.typesetPromise([article]);
 }
 
-async function highlightCode(root) {
-  const blocks = [...root.querySelectorAll('pre')];
-  if (!blocks.length) return;
-  const {highlighter} = await import('./vendor/shiki.js');
-  const shiki = await highlighter();
-  for (const original of blocks) {
-    const code = original.querySelector('code');
+function prepareCode(root) {
+  for (const pre of root.querySelectorAll('pre')) {
+    const code = pre.querySelector('code');
     const text = code?.textContent || '';
     const requested = /(?:^|\s)language-(\S+)/.exec(code?.className || '')?.[1] || 'text';
-    const language = shiki.getLoadedLanguages().includes(requested) ? requested : 'text';
-    const template = document.createElement('template');
-    template.innerHTML = shiki.codeToHtml(text, {lang: language, themes: {light: 'github-light', dark: 'github-dark'}});
-    const pre = template.content.firstElementChild;
-    // 只改着色，不改变代码字符；复制始终使用原稿的完整文本。
-    if (pre.querySelector('code').textContent !== text) throw Error('代码高亮改变了文本');
-    pre.dataset.language = language;
+    pre.dataset.language = requested;
     const label = document.createElement('span'); label.className = 'code-language'; label.textContent = requested.toUpperCase(); label.setAttribute('aria-hidden', 'true');
     const copy = document.createElement('button'); copy.type = 'button'; copy.className = 'copy-code'; copy.textContent = '复制代码';
     copy.addEventListener('click', async () => {
@@ -132,7 +127,47 @@ async function highlightCode(root) {
       catch {copy.textContent = '请选中代码复制';}
       setTimeout(() => copy.textContent = '复制代码', 1800);
     });
-    pre.append(label, copy); original.replaceWith(pre);
+    pre.append(label, copy);
+  }
+}
+
+async function highlightCode(root) {
+  const blocks = [...root.querySelectorAll('pre:not(.shiki)')];
+  if (!blocks.length) return;
+  const {highlighter} = await import('./vendor/shiki.js?v=20261104.4');
+  const shiki = await highlighter();
+  for (const original of blocks) {
+    const text = original.querySelector('code')?.textContent || '';
+    const requested = original.dataset.language;
+    const language = shiki.getLoadedLanguages().includes(requested) ? requested : 'text';
+    const template = document.createElement('template');
+    template.innerHTML = shiki.codeToHtml(text, {lang: language, themes: {light: 'github-light', dark: 'github-dark'}});
+    const pre = template.content.firstElementChild;
+    // 只改着色，不改变代码字符；复制控件在高亮失败时也能使用。
+    if (pre.querySelector('code').textContent !== text) throw Error('代码高亮改变了文本');
+    pre.dataset.language = language;
+    pre.append(...original.querySelectorAll('.code-language, .copy-code'));
+    original.replaceWith(pre);
+  }
+}
+
+async function enhance(stage, action, message) {
+  document.documentElement.dataset[stage] = 'loading';
+  document.getElementById('notice-' + stage)?.remove();
+  try {
+    await action();
+    document.documentElement.dataset[stage] = 'ready';
+  } catch (error) {
+    document.documentElement.dataset[stage] = 'error';
+    const note = document.createElement('p');
+    note.id = 'notice-' + stage; note.className = 'render-notice'; note.setAttribute('role', 'status');
+    note.textContent = message;
+    if (stage === 'math') {
+      const retry = document.createElement('button'); retry.type = 'button'; retry.textContent = '重试公式排版';
+      retry.addEventListener('click', () => enhance(stage, action, message)); note.append(' ', retry);
+    }
+    app.querySelector('.reader-meta').after(note);
+    console.error(stage + ':', error);
   }
 }
 
@@ -173,8 +208,9 @@ async function reader(chapter) {
     wrapper.tabIndex = 0; wrapper.setAttribute('role', 'region'); wrapper.setAttribute('aria-label', '可横向滚动的表格');
     table.replaceWith(wrapper); wrapper.append(table);
   }
-  await highlightCode(parsed.root);
+  // 先呈现正文，再分别增强；任何一个组件失败都不能让整篇空白。
   article.append(parsed.root);
+  prepareCode(article);
   app.querySelector('.back-top').addEventListener('click', () => scrollTo({top: 0, behavior: 'instant'}));
   for (const a of app.querySelectorAll('.mobile-toc a')) a.addEventListener('click', () => app.querySelector('.mobile-toc').open = false);
   const progress = app.querySelector('.reading-progress');
@@ -186,7 +222,10 @@ async function reader(chapter) {
     for (const a of app.querySelectorAll('.page-toc a')) a.classList.toggle('active', decodeURIComponent(a.hash.slice(1)) === visible.target.id);
   }, {rootMargin: '-90px 0px -65% 0px'});
   for (const heading of article.querySelectorAll('h2,h3')) observer.observe(heading);
-  await typeset(article);
+  await Promise.all([
+    enhance('math', () => typeset(article), '公式组件暂未载入，当前保留公式源码。'),
+    enhance('highlight', () => highlightCode(article), '代码高亮暂未载入，代码仍可阅读和复制。'),
+  ]);
   // SVG 和 PNG 加载完成后再跳锚点，避免图片撑开导致跳转位置漂移。
   if (location.hash) {
     await Promise.all([...article.querySelectorAll('img')].map(img => {img.loading = 'eager'; return img.decode().catch(() => {});}));
@@ -273,7 +312,7 @@ try {
   }
 } catch (error) {
   if (app.querySelector('article')) {
-    const note = document.createElement('p'); note.className = 'muted'; note.textContent = '公式排版暂未完成，请刷新重试，或下载 PDF 阅读。'; app.querySelector('.reader-meta').after(note);
+    const note = document.createElement('p'); note.className = 'render-notice'; note.textContent = '阅读组件加载中断，已载入的正文仍可阅读。'; app.querySelector('.reader-meta').after(note);
   } else app.innerHTML = '<main id="main" class="loading"><h1>暂时无法打开</h1><p>' + esc(error.message) + '</p><a href="./">返回首页</a></main>';
   console.error(error); document.documentElement.dataset.ready = 'error';
 }
